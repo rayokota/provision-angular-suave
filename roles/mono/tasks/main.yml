@@ -1,0 +1,33 @@
+---
+- name: Add PPA for Mono
+  apt_repository: repo='deb http://azure.archive.ubuntu.com/ubuntu/ trusty main'
+
+- name: Add PPA for Mono
+  apt_repository: repo='deb-src http://azure.archive.ubuntu.com/ubuntu/ trusty main'
+    
+- name: Add PPA for Mono
+  apt_repository: repo='deb http://azure.archive.ubuntu.com/ubuntu/ trusty universe'
+
+- name: Add PPA for Mono
+  apt_repository: repo='deb-src http://azure.archive.ubuntu.com/ubuntu/ trusty universe'
+ 
+- name: Update apt cache
+  apt: update_cache=yes
+ 
+- name: Install Mono
+  apt: pkg=mono-complete
+  # will fail installing monodoc-browser
+  ignore_errors: true
+
+- name: Install F#
+  apt: pkg=fsharp
+  # will fail installing monodoc-browser
+  ignore_errors: true
+
+- name: Import Mozilla LXR certificates into Mono
+  command: mozroots --import --sync
+  sudo: false
+
+- name: Install nuget
+  get_url: url=http://nuget.org/nuget.exe dest=/usr/local/bin/nuget.exe mode=0755
+
