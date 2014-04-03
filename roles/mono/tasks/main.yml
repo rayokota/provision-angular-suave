@@ -1,14 +1,14 @@
 ---
-- name: Add PPA for Mono
+- name: Add repo for Mono (see http://fsharp.org/use/linux/)
   apt_repository: repo='deb http://azure.archive.ubuntu.com/ubuntu/ trusty main'
 
-- name: Add PPA for Mono
+- name: Add repo for Mono (see http://fsharp.org/use/linux/)
   apt_repository: repo='deb-src http://azure.archive.ubuntu.com/ubuntu/ trusty main'
     
-- name: Add PPA for Mono
+- name: Add repo for Mono (see http://fsharp.org/use/linux/)
   apt_repository: repo='deb http://azure.archive.ubuntu.com/ubuntu/ trusty universe'
 
-- name: Add PPA for Mono
+- name: Add repo for Mono (see http://fsharp.org/use/linux/)
   apt_repository: repo='deb-src http://azure.archive.ubuntu.com/ubuntu/ trusty universe'
  
 - name: Update apt cache
