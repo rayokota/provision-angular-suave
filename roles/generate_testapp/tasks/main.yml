@@ -45,8 +45,7 @@
        body='{"id":"", "myattr":"mymessage"}' HEADER_Content-Type="application/json"
 
 - name: Update entity
-  #uri: url=http://localhost:8080/yourapp/yourentities/2 method=PUT
-  uri: url=http://localhost:8080/yourapp/yourentities/2 method=POST
+  uri: url=http://localhost:8080/yourapp/yourentities/2 method=PUT
        body='{"id":2, "myattr":"yourmessage"}' HEADER_Content-Type="application/json"
 
 - name: Delete entity
